@@ -169,6 +169,23 @@ add_action('after_setup_theme', 'template_theme_setup');
 
 
 /**
+ *  Add support for uploading SVG files
+ * 
+ *  https://developer.wordpress.org/reference/hooks/upload_mimes/
+ * 
+ */
+add_filter('upload_mimes', 'template_theme_add_file_types_to_uploads');
+
+function template_theme_add_file_types_to_uploads($file_types)
+{
+    $new_filetypes = array();
+    $new_filetypes['svg'] = 'image/svg+xml';
+    $file_types = array_merge($file_types, $new_filetypes);
+    return $file_types;
+}
+
+
+/**
  *  Admin dashboard items reorder
  * 
  *  Here u can list items in your desired order

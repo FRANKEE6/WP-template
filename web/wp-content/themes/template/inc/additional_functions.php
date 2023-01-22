@@ -20,7 +20,7 @@ function template_theme_filter_telephone_number($number)
 }
 
 
-// Get nad echo the slug of page
+// Get and echo the slug of page
 function template_theme_add_page_slug()
 {
     global $post;
@@ -28,6 +28,20 @@ function template_theme_add_page_slug()
         $page_slug = $post->post_name;
     }
     echo esc_attr($page_slug);
+}
+
+// Function that will detect a page which is set to display posts
+function is_blog()
+{
+    if (is_front_page() && is_home()) {
+        return false;
+    } elseif (is_front_page()) {
+        return false;
+    } elseif (is_home()) {
+        return get_option('page_for_posts'); // Returns blog page ID
+    } else {
+        return false;
+    }
 }
 
 
