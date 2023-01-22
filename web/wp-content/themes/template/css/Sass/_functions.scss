@@ -1,0 +1,8 @@
+// If u need to create custom Sass functions, place them here
+// https://sass-lang.com/documentation/values/functions
+
+// Font size
+// This is function i use to convert pixels into em units
+@function em($size, $context: 16) {
+  @return ($size / $context) + em;
+}

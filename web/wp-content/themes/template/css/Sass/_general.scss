@@ -1,0 +1,28 @@
+// General code that need to be used across whole site
+
+// Set box-sizing of all elements to border-box
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+// Base setup for body element
+body {
+  font-size: $base-font-size;
+  -webkit-font-smoothing: antialiased;
+  overflow-x: hidden;
+}
+
+// Base setup for anchors
+a {
+  text-decoration: none;
+  white-space: nowrap;
+}
+
+// This selector controls background color when something is selected on page
+// Change from default to any color or variable
+*::selection {
+  background: default;
+  color: default;
+}

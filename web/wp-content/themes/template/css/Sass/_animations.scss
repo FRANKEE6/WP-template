@@ -1,62 +1,48 @@
-/*
-Theme Name:   Template
-Description:  Template theme used for setting up my projects
-Author:       FRANKEE
-Version:      0.01
-*/
+// Place to put your animation keyframes
+
+// This animation i created makes element jump
 @keyframes jumper {
   0% {
     transform: translate(0%, 50%);
   }
+
   5% {
     transform: scale(1.45, 0.6) translate(0%, 110%);
   }
+
   10% {
     transform: scale(0.9, 1.1) translate(0%, 20%);
   }
+
   20% {
     transform: scale(1, 1) translate(0%, -60%);
   }
+
   40% {
     transform: scale(1.25, 0.75) translate(0%, -90%);
   }
+
   50% {
     transform: scale(1.1, 0.9) translate(0%, -70%);
   }
+
   55% {
     transform: scale(1.1, 0.9) translate(0%, 55%);
   }
+
   62% {
     transform: scale(1.3, 0.7) translate(0%, 85%);
   }
+
   75% {
     transform: scale(0.9, 1.1) translate(0%, 35%);
   }
+
   86% {
     transform: scale(1.15, 0.85) translate(0%, 65%);
   }
+
   100% {
     transform: scale(1, 1) translate(0%, 50%);
   }
-}
-*,
-*::before,
-*::after {
-  box-sizing: border-box;
-}
-
-body {
-  font-size: 100%;
-  -webkit-font-smoothing: antialiased;
-  overflow-x: hidden;
-}
-
-a {
-  text-decoration: none;
-  white-space: nowrap;
-}
-
-*::selection {
-  background: default;
-  color: default;
 }

@@ -1,0 +1,18 @@
+/*
+Theme Name:   Template
+Description:  Template theme used for setting up my projects
+Author:       FRANKEE
+Version:      0.01
+*/
+@import "css/Sass/_variables.scss";
+@import "css/Sass/_functions.scss";
+@import "css/Sass/_mixins.scss";
+@import "css/Sass/_animations.scss";
+@import "css/Sass/_general.scss";
+@import "css/Sass/_header.scss";
+@import "css/Sass/_main_content.scss";
+@import "css/Sass/_footer.scss";
+@import "css/Sass/_media.scss";
+
+// This file just links other scss files which were split to make code more transparent
+// U need to compile this file from scss to css after every change to apply those changes
