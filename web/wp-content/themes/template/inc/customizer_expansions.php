@@ -18,6 +18,12 @@ function templete_theme_customize_register($wp_customize)
 {
     // Sections
     // https://developer.wordpress.org/reference/classes/wp_customize_manager/add_section/
+    $wp_customize->add_section('contact_informations', array(
+        'title' => __('Kontaktné informácie', 'template_theme'),
+        'priority' => 30,
+        'description' => __('Úprava otváracích hodín v hlavičke', 'template_theme'),
+    ));
+
     $wp_customize->add_section('open_hours', array(
         'title' => __('Open hours', 'template_theme'),
         'priority' => 31,
@@ -39,6 +45,18 @@ function templete_theme_customize_register($wp_customize)
 
     // Settings
     // https://developer.wordpress.org/reference/classes/wp_customize_manager/add_setting/
+    $wp_customize->add_setting('contact_tel', array(
+        'default' => '',
+        'transport' => 'refresh',
+        'sanitize_callback' => 'sanitize_text_field',
+    ));
+
+    $wp_customize->add_setting('contact_mail', array(
+        'default' => '',
+        'transport' => 'refresh',
+        'sanitize_callback' => 'template_theme_sanitize_email',
+    ));
+
     $wp_customize->add_setting('open_hours_1', array(
         'default' => __('Wednesday - Sunday: 12:00 - 20:00', 'template_theme'),
         'transport' => 'refresh',
@@ -77,6 +95,22 @@ function templete_theme_customize_register($wp_customize)
 
     // Controls
     // https://developer.wordpress.org/reference/classes/wp_customize_manager/add_control/
+    $wp_customize->add_control('contact_tel', array(
+        'type' => 'tel',
+        'priority' => 10,
+        'section' => 'contact_informations',
+        'label' => __('Telephone number', 'template_theme'),
+        'description' => __('Insert telephone number to your company', 'template_theme'),
+    ));
+
+    $wp_customize->add_control('contact_mail', array(
+        'type' => 'mail',
+        'priority' => 11,
+        'section' => 'contact_informations',
+        'label' => __('Mail address', 'template_theme'),
+        'description' => __('Insert mail address of your company', 'template_theme'),
+    ));
+
     $wp_customize->add_control('open_hours_1', array(
         'type' => 'text',
         'priority' => 10,

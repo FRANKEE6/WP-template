@@ -48,13 +48,10 @@ function template_theme_sanitize_copy_text($content)
 
 
 // My function which will sanitize email address in my customizer expansion
-// This is just example. Expansion which it is used for do not exist in this template
-/*
 function template_theme_sanitize_email($email, $setting)
 {
     return (is_email($email) ? $email : $setting->default);
 }
-*/
 
 
 // My function which will sanitize checkbox in my customizer expansion
