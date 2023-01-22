@@ -32,7 +32,7 @@ function template_theme_enqueue_scripts()
 {
     wp_enqueue_script(
         'my-script',
-        get_stylesheet_directory_uri() . '/js/custom.js',
+        TEMPLATE_DIRECTORY_URI . '/js/custom.js',
         array('jquery'),
         false,
         true
