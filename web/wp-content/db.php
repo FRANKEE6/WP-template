@@ -1,0 +1,1 @@
+E:/Programovanie/php_root/Templates/WordPress/web/wp-content/plugins/query-monitor/wp-content/db.php
