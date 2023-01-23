@@ -1,0 +1,15 @@
+/*
+    This is specific stylesheet which will be used ONLY on admin login page
+    Allows you to customize login page while not dragging performance on other pages.
+*/
+
+body.login {
+  background: url("../other_data/admin_background_cover.jpg") 0 0 no-repeat;
+  background-size: cover;
+}
+
+body.login h1 a {
+  background-color: rgb(255, 255, 255);
+  background-color: rgba(255, 255, 255, 0.8);
+  border-radius: 50px;
+}

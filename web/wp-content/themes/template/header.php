@@ -33,12 +33,13 @@
         <section class="mainHeader">
             <?php
             // On this place your custom logo will be placed if u have one
+            // Width and height should be same as u have set in add_theme_support('custom-logo')
             $custom_logo_id = get_theme_mod('custom_logo');
             $logo = wp_get_attachment_image_src($custom_logo_id, 'full');
             if (has_custom_logo()) {
                 echo '<a class="site-logo" href="' . get_home_url() . '"> <img src="' .
                     esc_url($logo[0]) . '" alt="' . get_bloginfo('name') .
-                    '"width="200" height="200"></a>';
+                    '"width="250" height="181"></a>';
             }
             ?>
 

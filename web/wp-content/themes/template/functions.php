@@ -12,6 +12,7 @@
 
 // Constatnts created so we do not need to call those functions again. 
 define('THEME_DIRECTORY', get_theme_file_path());
+define('THEME_DIRECTORY_URI', get_theme_file_uri());
 define('TEMPLATE_DIRECTORY', get_template_directory());
 define('TEMPLATE_DIRECTORY_URI', get_template_directory_uri());
 

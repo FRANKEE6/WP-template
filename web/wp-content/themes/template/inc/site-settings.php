@@ -87,13 +87,14 @@ function template_theme_setup()
 
 
     // Add support for core custom logo.
+    // Height & width parameters are only suggestions for user about which dimensions should image have
     // https://codex.wordpress.org/Theme_Logo
     // https://developer.wordpress.org/reference/functions/add_theme_support/#custom-logo
     add_theme_support(
         'custom-logo',
         array(
-            'height'               => 100,
-            'width'                => 300,
+            'height'               => 181,
+            'width'                => 250,
             'flex-width'           => true,
             'flex-height'          => true,
             'header-text' => array('site-title', 'site-description'),
@@ -182,6 +183,48 @@ function template_theme_add_file_types_to_uploads($file_types)
     $new_filetypes['svg'] = 'image/svg+xml';
     $file_types = array_merge($file_types, $new_filetypes);
     return $file_types;
+}
+
+
+/**
+ *  This code links your css into login page of WordPress
+ *  In this css file plase styles specific for this page
+ * 
+ *  Second part will insert our style which will substitue WP logo with site logo from customizer
+ * 
+ *  https://developer.wordpress.org/reference/hooks/login_head/
+ */
+add_action('login_head', 'template_theme_custom_login');
+function template_theme_custom_login()
+{
+    echo '<link rel="stylesheet" href="' . THEME_DIRECTORY_URI . '/css/custom_login.css">';
+
+    // Second part starts here
+    if (has_custom_logo()) :
+        $logo = wp_get_attachment_image_url(get_theme_mod('custom_logo'), 'thumbnail');
+?>
+
+        <style>
+            .login h1 a {
+                background-image: url("<?php echo esc_url($logo) ?>");
+            }
+        </style>
+
+<?php endif;
+}
+
+
+/**
+ *  Trough this filter u can substitue url address of logo at login form with your custom url
+ *  In this case it's url to homepage of our site
+ * 
+ *  https://developer.wordpress.org/reference/hooks/login_headerurl/
+ * 
+ */
+add_filter('login_headerurl', 'template_theme_login_header_url');
+function template_theme_login_header_url()
+{
+    return get_home_url();
 }
 
 
