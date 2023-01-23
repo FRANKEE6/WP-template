@@ -1,6 +1,5 @@
 <?php
-// This page have example of WordPress loop
-// It will work if u have set some page as your blog page in WordPress settings
+// This page will show single post
 
 // Get your header
 get_header();
@@ -9,8 +8,7 @@ get_header();
 <section class="main-content">
 
     <!-- Custom function which will detect page which is set for blog -->
-    <?php if (is_blog()) : ?>
-        <h1>Blog</h1>
+    <?php if (is_single()) : ?>
 
         <!-- WordPress loops starts -->
         <?php if (have_posts()) : ?>
@@ -19,7 +17,7 @@ get_header();
                 <!-- Set structure of each post here -->
                 <article <?php post_class() ?>>
                     <h2>
-                        <a href="<?php the_permalink(); ?>" rel="bookmark" title="Permanent Link to <?php the_title_attribute(); ?>"><?php the_title(); ?></a>
+                        <?php the_title(); ?>
                     </h2>
                     <section class="post-data">
                         <time datetime="<?php echo get_the_date(get_option('date_format')) ?>">
@@ -31,7 +29,6 @@ get_header();
                     </section>
                     <!-- the_content will insert data of your post from database -->
                     <?php the_content(); ?>
-
                 </article>
             <?php endwhile; ?>
 
