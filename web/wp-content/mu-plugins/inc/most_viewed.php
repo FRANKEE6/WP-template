@@ -119,3 +119,38 @@ function template_theme_add_post_views_data($column, $post_ID)
         echo template_theme_get_post_view_count($post_ID);
     }
 }
+
+
+/**
+ *  Make 'views' column sortable
+ */
+
+add_filter('manage_edit-post_sortable_columns', 'teamplate_theme_add_sortable_views_column');
+function teamplate_theme_add_sortable_views_column($columns)
+{
+    $columns['views'] = __('views', 'template_theme');
+
+    return ($columns);
+}
+
+
+/**
+ *  Order by 'views' column
+ * 
+ *  Make sure values are ordered as numeric
+ * 
+ *  We are hooking before Query is fired so we can edit it
+ */
+
+add_action('pre_get_posts', 'template_theme_views_column_orderby');
+function template_theme_views_column_orderby($query)
+{
+    if (!is_admin()) {
+        return;
+    }
+    $orderby = $query->get('orderby');
+    if ('views' == $orderby) {
+        $query->set('meta_key', '_post_view_count');
+        $query->set('orderby', 'meta_value_num');
+    }
+}
