@@ -15,4 +15,4 @@ WPMU_PLUGIN_URL
 /**
  *  Load functionality which tracks views of your posts
  */
-require_once WPMU_PLUGIN_DIR . '/inc/most_viewed_plugin/most_viewed.php';
+require_once WPMU_PLUGIN_DIR . '/inc/most_viewed_plugin/most_viewed_loader.php';

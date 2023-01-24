@@ -3,7 +3,7 @@
 /**
  *  Register Widget area.
  * 
- *  Here u can register and set your widgets
+ *  Here u can register and set atributes of your widgets
  * 
  *  https://developer.wordpress.org/themes/functionality/sidebars/#registering-a-sidebar
  * 
@@ -38,7 +38,7 @@ function template_theme_widgets_init()
             'name' => esc_html__('Footer', 'template_theme'),
             'id' => 'sidebar-3',
             'description' => esc_html__('Here u can insert content which will show up in your footer', 'template_theme'),
-            'before_widget' => '<div id="%1$s" class="widget %2$s">',
+            'before_widget' => '<div id="footer-sidebar" class="footer-sidebar-widget">',
             'after_widget' => '</div>',
         )
     );
