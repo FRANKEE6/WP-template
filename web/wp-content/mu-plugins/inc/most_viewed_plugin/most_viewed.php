@@ -154,3 +154,26 @@ function template_theme_views_column_orderby($query)
         $query->set('orderby', 'meta_value_num');
     }
 }
+
+
+/**
+ *  Enqueuing admin styles for views column
+ * 
+ *  This example shows how u can be more specific on which page u want to add your css or js
+ *  Or use standard wp_enqueue_scripts hook to add it on every page
+ * 
+ *  https://developer.wordpress.org/reference/hooks/admin_print_styles-hook_suffix/
+ * 
+ *  For scripts use hook admin_print_scripts
+ */
+
+// First showcase of constants which u can use at any plugin u are creating, not only mu plugin
+define('TEMPLATE_THEME_MOST_VIEWED_PLUGIN', __FILE__);
+define('TEMPLATE_THEME_MOST_VIEWED_PLUGIN_DIR', untrailingslashit(dirname(TEMPLATE_THEME_MOST_VIEWED_PLUGIN)));
+define('TEMPLATE_THEME_MOST_VIEWED_PLUGIN_URL', untrailingslashit(plugin_dir_url(TEMPLATE_THEME_MOST_VIEWED_PLUGIN)));
+
+function template_theme_enqueue_admin_styles()
+{
+    wp_enqueue_style('template_theme_admin_style', TEMPLATE_THEME_MOST_VIEWED_PLUGIN_URL . '/css/admin.css');
+}
+add_action('admin_print_styles-edit.php', 'template_theme_enqueue_admin_styles');
