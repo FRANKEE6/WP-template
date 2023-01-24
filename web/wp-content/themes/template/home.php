@@ -14,6 +14,12 @@ get_header();
 
         <!-- WordPress loops starts -->
         <?php if (have_posts()) : ?>
+
+            <?php
+            // U can split templates into parts to make it more transparent like this
+            get_template_part('template-parts/post_ordering');
+            ?>
+
             <?php while (have_posts()) : the_post(); ?>
 
                 <!-- Set structure of each post here -->

@@ -1,0 +1,7 @@
+/*
+    This css updates column width for your view_count
+*/
+
+.fixed .column-views {
+  width: 5%;
+}
