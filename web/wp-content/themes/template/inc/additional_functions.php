@@ -26,6 +26,8 @@ function template_theme_add_page_slug()
     global $post;
     if (isset($post)) {
         $page_slug = $post->post_name;
+    } else {
+        $page_slug = '';
     }
     echo esc_attr($page_slug);
 }

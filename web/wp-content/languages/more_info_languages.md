@@ -13,3 +13,31 @@
 - Rename blank pot name to your text domain name.pot
 - Run poedit, find your blank pot and open it, then save it with name of your text-domain-laguage-prefix
 - Extract translatable text from source and strat with translating
+
+## internationalization code examples
+
+- Simple example of translatable text
+
+```
+__('text', 'textdomain'),
+```
+
+- This example will automatically echo your text
+
+```
+_e('text', 'textdomain'),
+```
+
+- This allows you to insert more info about text which is translated. This helps translators to catch on context
+
+```
+_x('text', 'Post type singular name', 'textdomain'),
+```
+
+- U can combine translations with some esc functions. Few examples below
+
+```
+esc_html__('text', 'textdomain'),
+esc_html_e('text', 'textdomain'),
+esc_attr_x('text', 'Post type singular name', 'textdomain'),
+```

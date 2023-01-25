@@ -8,6 +8,8 @@ Domain Path: /languages/plugins
 Version: 0.1
 */
 
+// https://developer.wordpress.org/plugins/post-types/
+
 define('TEMPLATE_THEME_CUSTOM_POST_TYPE_PLUGIN', __FILE__);
 define('TEMPLATE_THEME_CUSTOM_POST_TYPE_PLUGIN_DIR', untrailingslashit(dirname(TEMPLATE_THEME_CUSTOM_POST_TYPE_PLUGIN)));
 
@@ -19,3 +21,9 @@ function template_theme_custom_post_type_load_textdomain()
 {
     load_plugin_textdomain('template-theme-custom-post-type');
 }
+
+
+/**
+ *  Load core functionality of plugin
+ */
+require_once TEMPLATE_THEME_CUSTOM_POST_TYPE_PLUGIN_DIR . '/inc/custom_post_type_core.php';

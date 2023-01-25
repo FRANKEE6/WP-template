@@ -243,6 +243,7 @@ function template_theme_menu_order($__return_true)
     return array(
         'index.php', // Dashboard
         'separator1', // Medzera
+        'edit.php?post_type=tt_movies', // Movies (template theme custom post type plugin)
         'edit.php', // Posts
         'edit.php?post_type=page', // Pages
         'upload.php', // Media
