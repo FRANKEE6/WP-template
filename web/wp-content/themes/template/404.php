@@ -7,7 +7,7 @@ get_header();
 
 <!-- Insert your custom 404 text here -->
 <section class="main-content not-found-404">
-    <h1>Shieeeet! Something is not right.</h1>
+    <h1><?php __('Shieeeet! Something is not right.', 'template-theme') ?></h1>
 </section>
 
 <?php

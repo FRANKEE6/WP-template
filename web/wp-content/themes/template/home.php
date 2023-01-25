@@ -43,7 +43,7 @@ get_header();
 
             <!-- If there are no post to show -->
         <?php else : ?>
-            <p>We are sorry but this page has no post added right now.</p>
+            <p><?php __('We are sorry but this page has no post added right now.', 'template-theme') ?></p>
         <?php endif; ?>
     <?php endif; ?>
 

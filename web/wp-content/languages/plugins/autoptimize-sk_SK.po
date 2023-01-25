@@ -1,0 +1,519 @@
+# Translation of Plugins - Autoptimize - Stable (latest release) in Slovak
+# This file is distributed under the same license as the Plugins - Autoptimize - Stable (latest release) package.
+msgid ""
+msgstr ""
+"PO-Revision-Date: 2022-11-01 12:07:07+0000\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=3; plural=(n == 1) ? 0 : ((n >= 2 && n <= 4) ? 1 : 2);\n"
+"X-Generator: GlotPress/4.0.0-alpha.3\n"
+"Language: sk\n"
+"Project-Id-Version: Plugins - Autoptimize - Stable (latest release)\n"
+
+#: classes/autoptimizeConfig.php:373
+msgid "Also minify inline JS/ CSS?"
+msgstr "Minifikovať aj JS/CSS?"
+
+#: classes/critcss-inc/admin_settings_adv.php:143
+msgid "Debug Mode"
+msgstr "Mód ladenia"
+
+#: classes/critcss-inc/admin_settings_queue.js.php:186
+msgid "Retry"
+msgstr "Skúsiť znovu"
+
+#: classes/critcss-inc/admin_settings_queue.js.php:119
+msgid "N/A"
+msgstr "Nedostupné"
+
+#: classes/critcss-inc/admin_settings_queue.js.php:103
+#: classes/critcss-inc/admin_settings_queue.js.php:112
+msgid "Get Help"
+msgstr "Získať pomoc"
+
+#: classes/critcss-inc/admin_settings_queue.js.php:102
+msgid "ERROR"
+msgstr "CHYBA"
+
+#: classes/critcss-inc/admin_settings_queue.js.php:95
+msgid "DONE"
+msgstr "HOTOVO"
+
+#: classes/autoptimizeCriticalCSSSettings.php:370
+msgid "Import Settings"
+msgstr "Importovať nastavenia"
+
+#: classes/autoptimizeCriticalCSSSettings.php:369
+msgid "Export Settings"
+msgstr "Exportovať nastavenia"
+
+#: classes/autoptimizeCriticalCSSSettings.php:52
+#: classes/autoptimizeCriticalCSSSettings.php:124
+#: classes/critcss-inc/admin_settings_explain.php:15
+msgid "Critical CSS"
+msgstr "Kritické CSS"
+
+#: classes/autoptimizeConfig.php:465
+msgid "Also optimize for logged in editors/ administrators?"
+msgstr "Povoliť optimalizáciu pre prihlásených editorov/administrátorov?"
+
+#: classes/autoptimizeConfig.php:213
+msgid "Multisite Options"
+msgstr "Možnosti siete"
+
+#: classes/autoptimizeExtra.php:586
+msgid "Comma-separated list with full URL's of to to-be-preloaded resources. To be used sparingly!"
+msgstr "Čiarkou oddelený zoznam URL adries zdrojov, ktoré sa majú prednačítať."
+
+#: classes/autoptimizeExtra.php:584
+msgid "Preload specific requests <em>(advanced users)</em>"
+msgstr "Prednačítavať špecifické požiadavky <em>(pokročilí používatelia)</em>"
+
+#. translators: "display:swap" should remain untranslated, will be shown in
+#. code tags.
+#: classes/autoptimizeExtra.php:553 classes/autoptimizeExtra.php:555
+msgid "includes %1$sdisplay:swap%2$s."
+msgstr "Zahrňa %1$sdisplay:swap%2$s."
+
+#: classes/autoptimizeConfig.php:467
+msgid "By default Autoptimize is also active for logged on editors/ administrators, uncheck this option if you don't want Autoptimize to optimize when logged in e.g. to use a pagebuilder."
+msgstr "Predvolene je Autoptimize aktívne aj pre prihlásených editorov a administrátorov. Zrušte túto možnosť, ak to tak nechcete. Napr. pri používaní pagebuilder pluginov."
+
+#: classes/autoptimizeConfig.php:338
+msgid "Paste the above the fold CSS here. You can leave this empty when using the automated Critical CSS integration."
+msgstr "Sem vložte CSS nad záhybom. Môžete nechať prázdne, ak používate automatizovanú integráciu kritického CSS."
+
+#: classes/autoptimizeConfig.php:349
+msgid "Important: excluded non-minified files are still minified by Autoptimize unless that option under \"misc\" is disabled."
+msgstr "Dôležité: vynechané neminifikované súbory sú stále minifikované pomocou Autoptimize, pokiaľ nie je táto možnosť zakázané v \"ostatné\"."
+
+#: classes/autoptimizeConfig.php:216
+msgid "Enable site configuration?"
+msgstr "Povoliť konfiguráciu siete?"
+
+#: classes/autoptimizeConfig.php:218
+msgid "Enable Autoptimize configuration per site."
+msgstr "Povoluje konfiguráciu Autoptimize pre každú stránku v sieti samostatne."
+
+#. translators: link points to shortpixel FAQ.
+#: classes/autoptimizeImages.php:1301
+msgid "Only works for websites and images that are publicly available."
+msgstr "Funguje len pre webové stránky a obrázky, ktoré sú verejne dostupné."
+
+#: classes/autoptimizeConfig.php:956
+msgid "JS, CSS  &amp; HTML"
+msgstr "JS, CSS a HTML"
+
+#: classes/autoptimizeConfig.php:455
+msgid "Minify excluded CSS and JS files?"
+msgstr "Minifikovať vynechané CSS a JS súbory?"
+
+#: classes/autoptimizeImages.php:1365
+msgid "Lazy-load exclusions"
+msgstr "Lazy-load výnimky"
+
+#: classes/autoptimizeImages.php:1359
+msgid "Lazy-load images?"
+msgstr "Použiť lazy-load na obrázky?"
+
+#: classes/autoptimizeImages.php:1261
+msgid "Image optimization"
+msgstr "Optimalizácia obrázkov"
+
+#: classes/autoptimizeImages.php:1201 classes/autoptimizeImages.php:1225
+msgid "Images"
+msgstr "Obrázky"
+
+#. Description of the plugin
+msgid "Makes your site faster by optimizing CSS, JS, Images, Google fonts and more."
+msgstr "Zrýchlite vašu webovú stránku optimalizáciou CSS, JS, obrázkov, Google fontov a ostatných súčastí."
+
+#: classes/autoptimizeImages.php:1346
+msgid "Load AVIF in supported browsers?"
+msgstr "Načítať AVIF v podporovaných prehliadačoch?"
+
+#: classes/autoptimizeImages.php:1444
+msgid "based on status at "
+msgstr "na základe stavu na"
+
+#: classes/autoptimizeImages.php:1446
+msgid "based on previously fetched data"
+msgstr "na základe naposledy načítaných dát"
+
+#. translators: link points to shortpixel image test page.
+#: classes/autoptimizeImages.php:1337
+msgid "You can %1$stest compression levels here%2$s."
+msgstr "Tu môžete %1$sotestovať úrovne kompresie%2$s."
+
+#: classes/autoptimizeImages.php:1315
+msgid "Image Optimization quality"
+msgstr "Kvalita optimalizácie obrázkov"
+
+#. translators: "Autoptimize support forum" will appear in a "a href".
+#: classes/autoptimizeImages.php:1240
+msgid "The image optimization service is currently down, image optimization will be skipped until further notice. Check the %1$sAutoptimize support forum%2$s for more info."
+msgstr "Služba optimalizovania obrázkov je aktuálne nedostupná, optimalizácia obrázkov bude až od odvolania vynechaná. Viac informácií nájdete na %1$sfórach podpory sAutoptimize%2$s"
+
+#: classes/autoptimizeConfig.php:298
+msgid "Aggregate CSS-files?"
+msgstr "Zoskupiť CSS-súbory?"
+
+#: classes/autoptimizeConfig.php:234
+msgid "Aggregate JS-files?"
+msgstr "Zoskupiť JS-súbory?"
+
+#: classes/autoptimizeImages.php:1287
+msgid "Shortpixel status: "
+msgstr "Stav Shortpixel:"
+
+#: autoptimize.php:33
+msgid "Autoptimize requires PHP 5.6 (or higher) to function properly. Please upgrade PHP. The Plugin has been auto-deactivated."
+msgstr "Autoptimize vyžaduje pre správne fungovanie PHP 5.6 (alebo novšie). Aktualizujte vaše PHP, plugin bol automaticky deaktivovaný."
+
+#: classes/autoptimizePartners.php:84
+msgid "More info"
+msgstr "Viac informácií"
+
+#: classes/autoptimizeExtra.php:617
+msgid "Click here to configure it."
+msgstr "Kliknite sem pre konfiguráciu"
+
+#: classes/autoptimizeExtra.php:611
+msgid "Optimize YouTube videos"
+msgstr "Optimalizovať YouTube videá"
+
+#: classes/autoptimizeExtra.php:605 classes/autoptimizeExtra.php:622
+msgid "Click here to install and activate it."
+msgstr "Kliknite sem pre inštaláciu a aktiváciu."
+
+#: classes/autoptimizeExtra.php:615
+msgid "Great, you have WP YouTube Lyte installed."
+msgstr "Výborne, nainštalovali ste WP YouTube Lyte."
+
+#: classes/autoptimizeExtra.php:510 classes/autoptimizeExtra.php:532
+msgid "Extra"
+msgstr "Extra"
+
+#: classes/autoptimizeExtra.php:590
+msgid "Async Javascript-files <em>(advanced users)</em>"
+msgstr "Async Javascript súbory <em>(pokročilí používatelia)</em>"
+
+#: classes/autoptimizeExtra.php:550
+msgid "Leave as is"
+msgstr "Ponechať ako je"
+
+#: classes/autoptimizeExtra.php:548
+msgid "Google Fonts"
+msgstr "Google Fonts"
+
+#: classes/autoptimizeExtra.php:544
+msgid "Extra Auto-Optimizations"
+msgstr "Extra auto-optimalizácie"
+
+#: classes/autoptimizeExtra.php:560
+msgid "Remove emojis"
+msgstr "Odstrániť emotikony"
+
+#: classes/autoptimizeExtra.php:545
+msgid "The following settings can improve your site's performance even more."
+msgstr "Nasledujúce nastavenia môžu zlepšiť výkon vašej webovej stránky ešte viac. "
+
+#: classes/autoptimizeExtra.php:601
+msgid "Comma-separated list of local or 3rd party JS-files that should loaded with the <code>async</code> flag. JS-files from your own site will be automatically excluded if added here. "
+msgstr "Čiarkou oddelený zoznam lokálnych a treťo-stranových JS súborov, ktoré by mali byť nahraté s <code>async</code> značkou. JS súbory z vašej webovej stránky budú automaticky vylúčené, ak budú tu uvedené."
+
+#: classes/autoptimizeCLI.php:28
+msgid "Flushing the cache..."
+msgstr "Čistenie vyrovnávacej pamäte..."
+
+#: classes/autoptimizeCLI.php:30
+msgid "Cache flushed."
+msgstr "Vyrovnávacia pamäť vyčistená."
+
+#: classes/autoptimizeExtra.php:566
+msgid "Remove query strings from static resources"
+msgstr "Odstrániť query reťazce zo statických zdrojov"
+
+#: classes/autoptimizeExtra.php:578
+msgid "Preconnect to 3rd party domains <em>(advanced users)</em>"
+msgstr "Použiť preconnect na domény tretích strán <em>(pokročilí používatelia)</em>"
+
+#: classes/autoptimizeConfig.php:268 classes/autoptimizeConfig.php:317
+#: classes/autoptimizeExtra.php:556
+msgid "(deprecated)"
+msgstr "(neschválené)"
+
+#: classes/autoptimizeConfig.php:526
+msgid "Need help? <a href='https://wordpress.org/plugins/autoptimize/faq/'>Check out the FAQ here</a>."
+msgstr "Potrebujete pomôcť? <a href='https://wordpress.org/plugins/autoptimize/faq/'>Pozrite si časté otázky</a>."
+
+#: classes/autoptimizeConfig.php:475
+msgid "By default Autoptimize is also active on your shop's cart/ checkout, uncheck not to optimize those."
+msgstr "Predvolene, Autoptimize je taktiež aktívne v košíku/pokladni. Odznačte, ak toto nechcete."
+
+#: classes/autoptimizeConfig.php:473
+msgid "Also optimize shop cart/ checkout?"
+msgstr "Optimalizovať aj košík a pokladňu?"
+
+#: classes/autoptimizeConfig.php:441
+msgid "Misc Options"
+msgstr "Ostatné možnosti"
+
+#. translators: links to the Autoptimize settings page.
+#: classes/autoptimizeToolbar.php:152
+msgid "Your Autoptimize cache might not have been purged successfully, please check on the <a href=%s>Autoptimize settings page</a>."
+msgstr "Vaša Autoptimize cache zrejme nebola vyčistená správne, skontrolujte to v <a href=%s>Autoptimize nastaveniach</a>."
+
+#. translators: Kilobytes + timestamp shown.
+#: classes/autoptimizeConfig.php:432
+msgid "%1$s files, totalling %2$s (calculated at %3$s)"
+msgstr "%1$s súborov, celkovo %2$s (vypočítané o %3$s)"
+
+#. Plugin URI of the plugin
+#. Author URI of the plugin
+msgid "https://autoptimize.com/pro/"
+msgstr "https://autoptimize.com/pro/"
+
+#. Translators: %s is the cache directory location.
+#: classes/autoptimizeMain.php:738
+msgid "Autoptimize cannot write to the cache directory (%s), please fix to enable CSS/ JS optimization!"
+msgstr "Autoptimize nemôže zapisovať do cache priečinka (%s), pre povolenie CSS/ JS optimalizácií to opravte. "
+
+#: classes/autoptimizePartners.php:40 classes/autoptimizePartners.php:142
+msgid "Optimize More!"
+msgstr "Optimalizovať viac!"
+
+#: classes/autoptimizeToolbar.php:107
+msgid "Files"
+msgstr "Súbory"
+
+#: classes/autoptimizeToolbar.php:106
+msgid "Size"
+msgstr "Veľkosť"
+
+#: classes/autoptimizeCacheChecker.php:67
+msgid "Autoptimize's cache size is getting big, consider purging the cache. Have a look at https://wordpress.org/plugins/autoptimize/faq/ to see how you can keep the cache size under control."
+msgstr "Veľkosť Autoptimize cache narastá, zvážte vyčistenie cache. Pozrite sa na https://wordpress.org/plugins/autoptimize/faq/ a preskúmajte možnosti, ako udržať veľkosť cache pod kontrolou. "
+
+#. translators: links to the Autoptimize settings page.
+#: classes/autoptimizeToolbar.php:153
+msgid "Dismiss this notice."
+msgstr "Zrušiť toto oznámenie."
+
+#: classes/autoptimizePartners.php:56
+msgid "Have a look at <a href=\"http://optimizingmatters.com/\">optimizingmatters.com</a> for Autoptimize power-ups!"
+msgstr "Pozrite si referencie Autoptimize na <a href=\"http://optimizingmatters.com/\">optimizingmatters.com</a>!"
+
+#: classes/autoptimizeCacheChecker.php:66
+msgid "Autoptimize cache size warning"
+msgstr "Upozornenie na veľkosť Autoptimize cache"
+
+#: classes/autoptimizePartners.php:146
+msgid "These Autoptimize power-ups and related services will improve your site's performance even more!"
+msgstr "Tieto Autoptimize doplnky a príbuzné služby zlepšia výkon vašej webovej stránky ešte viac!"
+
+#: classes/autoptimizeConfig.php:380
+msgid "Enable this if you want HTML comments to remain in the page."
+msgstr "Povoľte toto, ak chcete, aby HTML komentáre ostali na stránke."
+
+#: classes/autoptimizeConfig.php:936
+msgid "No items"
+msgstr "Žiadne položky"
+
+#: classes/autoptimizeConfig.php:527
+msgid "Happy with Autoptimize?"
+msgstr "Spokojný s Autoptimize?"
+
+#: classes/autoptimizeConfig.php:527
+msgid "Try my other plugins!"
+msgstr "Vyskúšajte moje ostatné pluginy!"
+
+#: classes/autoptimizeConfig.php:303
+msgid "Also aggregate inline CSS?"
+msgstr "Agregovať taktiež vnorené CSS?"
+
+#: classes/autoptimizeConfig.php:239
+msgid "Also aggregate inline JS?"
+msgstr "Agregovať taktiež vnorené JS?"
+
+#. translators: the variable contains a date.
+#: classes/autoptimizeConfig.php:942
+msgid "Posted %s"
+msgstr "Publikované %s"
+
+#: classes/autoptimizeConfig.php:305
+msgid "Check this option for Autoptimize to also aggregate CSS in the HTML."
+msgstr "Označte toto a Autoptimize taktiež zoskupí CSS do HTML."
+
+#: classes/autoptimizeExtra.php:551
+msgid "Remove Google Fonts"
+msgstr "Odstrániť Google Fonts"
+
+#: classes/autoptimizeCacheChecker.php:92
+msgid "<strong>Autoptimize's cache size is getting big</strong>, consider purging the cache. Have a look at <a href=\"https://wordpress.org/plugins/autoptimize/faq/\" target=\"_blank\" rel=\"noopener noreferrer\">the Autoptimize FAQ</a> to see how you can keep the cache size under control."
+msgstr "<strong>Veľkosť Autoptimize cache narástá</strong>, zvážte jej vyčistenie. Pozrite na <a href=\"https://wordpress.org/plugins/autoptimize/faq/\" target=\"_blank\" rel=\"noopener noreferrer\">časté otázky Autoptimize</a> a pozrite sa, ako udržať veľkosť cache pod kontrolou."
+
+#: classes/autoptimizeConfig.php:789 classes/autoptimizeConfig.php:795
+msgid "Settings"
+msgstr "Nastavenia"
+
+#: classes/autoptimizeConfig.php:418
+msgid "No"
+msgstr "Nie"
+
+#: classes/autoptimizeConfig.php:418
+msgid "Yes"
+msgstr "Áno"
+
+#: classes/autoptimizeConfig.php:291
+msgid "CSS Options"
+msgstr "CSS možnosti"
+
+#: classes/autoptimizeConfig.php:366
+msgid "HTML Options"
+msgstr "HTML možnosti"
+
+#: classes/autoptimizeConfig.php:227
+msgid "JavaScript Options"
+msgstr "JavaScript možnosti"
+
+#: classes/autoptimizeConfig.php:230
+msgid "Optimize JavaScript Code?"
+msgstr "Optimalizovať JavaScript kód?"
+
+#: classes/autoptimizeConfig.php:410
+msgid "Cache Info"
+msgstr "Cache informácie"
+
+#: classes/autoptimizeConfig.php:94 classes/autoptimizeConfig.php:200
+#: classes/autoptimizeCriticalCSSSettings.php:128
+#: classes/autoptimizeExtra.php:534 classes/autoptimizeImages.php:1227
+#: classes/autoptimizePartners.php:144
+msgid "Autoptimize Settings"
+msgstr "Autoptimize nastavenia"
+
+#: classes/autoptimizeConfig.php:369
+msgid "Optimize HTML Code?"
+msgstr "Optimalizovať HTML kód?"
+
+#: classes/autoptimizeConfig.php:417
+msgid "Can we write?"
+msgstr "Môžeme zapisovať?"
+
+#: classes/autoptimizeConfig.php:294
+msgid "Optimize CSS Code?"
+msgstr "Optimalizovať CSS kód?"
+
+#: classes/autoptimizeConfig.php:244
+msgid "Force JavaScript in &lt;head&gt;?"
+msgstr "Vynútiť JavaScript v &lt;head&gt;?"
+
+#: classes/autoptimizeConfig.php:386
+msgid "CDN Options"
+msgstr "CDN možnosti"
+
+#: classes/autoptimizeConfig.php:444
+msgid "Save aggregated script/css as static files?"
+msgstr "Uložiť agregované skripty/css ako statické súbory?"
+
+#: classes/autoptimizeConfig.php:502
+msgid "Save Changes and Empty Cache"
+msgstr "Uložiť zmeny a vyčistiť cache"
+
+#: classes/autoptimizeConfig.php:316
+msgid "Look for styles only in &lt;head&gt;?"
+msgstr "Hľadať štýly iba v &lt;head&gt;?"
+
+#. Plugin Name of the plugin
+#: classes/autoptimizeCacheChecker.php:110 classes/autoptimizeConfig.php:717
+#: classes/autoptimizeToolbar.php:82
+msgid "Autoptimize"
+msgstr "Autoptimize"
+
+#: classes/autoptimizeConfig.php:720 classes/autoptimizeConfig.php:723
+#: classes/autoptimizeConfig.php:726
+msgid "Autoptimize Options"
+msgstr "Autoptimize možnosti"
+
+#: classes/autoptimizeConfig.php:378
+msgid "Keep HTML comments?"
+msgstr "Zachovať HTML komentáre?"
+
+#: classes/autoptimizeConfig.php:389
+msgid "CDN Base URL"
+msgstr "Základná URL adresa CDN"
+
+#: classes/autoptimizeConfig.php:501
+#: classes/autoptimizeCriticalCSSSettings.php:350
+#: classes/autoptimizeExtra.php:628 classes/autoptimizeImages.php:1377
+msgid "Save Changes"
+msgstr "Uložiť zmeny"
+
+#: classes/autoptimizeConfig.php:413
+msgid "Cache folder"
+msgstr "Cache priečinok"
+
+#. Author of the plugin
+msgid "Frank Goossens (futtta)"
+msgstr "Frank Goossens (futtta)"
+
+#: classes/autoptimizeConfig.php:349
+msgid "A comma-separated list of CSS you want to exclude from being optimized."
+msgstr "Čiarkou oddelený zoznam CSS súborov, ktoré chcete vynechať z optimalizácie. "
+
+#: classes/autoptimizeConfig.php:276
+msgid "Exclude scripts from Autoptimize:"
+msgstr "Vynechať skripty z Autoptimize:"
+
+#: classes/autoptimizeConfig.php:267
+msgid "Look for scripts only in &lt;head&gt;?"
+msgstr "Hľadať skripty iba v &lt;head&gt;?"
+
+#: classes/autoptimizeConfig.php:421
+msgid "Cached styles and scripts"
+msgstr "Štýly a skripty v cache"
+
+#: classes/autoptimizeConfig.php:249
+msgid "Add try-catch wrapping?"
+msgstr "Pridať try-catch obtekanie?"
+
+#: classes/autoptimizeConfig.php:341
+msgid "Inline all CSS?"
+msgstr "Vnoriť všetky CSS?"
+
+#: classes/autoptimizeConfig.php:346
+msgid "Exclude CSS from Autoptimize:"
+msgstr "Vynechať CSS z Autoptimize:"
+
+#: classes/autoptimizeConfig.php:542
+msgid "Do not donate for this plugin!"
+msgstr "Nepodporujte finančne tento plugin!"
+
+#: classes/autoptimizeConfig.php:446
+msgid "By default files saved are static css/js, uncheck this option if your webserver doesn't properly handle the compression and expiry."
+msgstr "Predvolene sú uložené súbory statické css/js, odznačte ak váš webový server nevie spracovať kompresiu a exspiráciu."
+
+#: classes/autoptimizeConfig.php:321
+msgid "Don't autoptimize CSS outside the head-section. If the cache gets big, you might want to enable this."
+msgstr "Neoptimalizovať CSS mimo sekcie head. Ak veľkosť cache narastie, môžete toto povoliť."
+
+#: classes/autoptimizeMain.php:752
+msgid "Autoptimize has just been updated. Please <strong>test your site now</strong> and adapt Autoptimize config if needed."
+msgstr "Autoptimize bolo práve aktualizované. Odporúčame <strong>ihneď otestovať webovú stránku</strong> a podľa potreby upraviť konfiguráciu Autoptimize."
+
+#: classes/autoptimizeConfig.php:272
+msgid "Mostly useful in combination with previous option when using jQuery-based templates, but might help keeping cache size under control."
+msgstr "Najčastejšie vhodné v kombinácii s predchádzajúcou možnosťou pri použití témy postavenej na jQuery, no môže pomôcť s udržaním veľkosti cache pod kontrolou."
+
+#: classes/autoptimizeConfig.php:308
+msgid "Generate data: URIs for images?"
+msgstr "Generovať data: URIs pre obrázky?"
+
+#: classes/autoptimizeConfig.php:310
+msgid "Enable this to include small background-images in the CSS itself instead of as separate downloads."
+msgstr "Povolením tohto vložíte malé obrázky pozadia priamo do samotného CSS, namiesto separátnych sťahovaní."
+
+#: classes/autoptimizeMain.php:745
+msgid "Thank you for installing and activating Autoptimize. Please configure it under %1$sSettings -> Autoptimize%2$s to start improving your site's performance."
+msgstr "Ďakujeme vám za inštaláciu a aktiváciu funkcie Autoptimize. Nakonfigurujte ju v časti %1$sNastavenia -> Autoptimize%2$s a začnite zlepšovať výkon svojej stránky."

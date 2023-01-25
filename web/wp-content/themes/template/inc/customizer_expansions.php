@@ -19,27 +19,27 @@ function templete_theme_customize_register($wp_customize)
     // Sections
     // https://developer.wordpress.org/reference/classes/wp_customize_manager/add_section/
     $wp_customize->add_section('contact_informations', array(
-        'title' => __('Kontaktné informácie', 'template_theme'),
+        'title' => __('Contact informations', 'template-theme'),
         'priority' => 30,
-        'description' => __('Úprava otváracích hodín v hlavičke', 'template_theme'),
+        'description' => __('Adjust your opening hours in header', 'template-theme'),
     ));
 
     $wp_customize->add_section('open_hours', array(
-        'title' => __('Open hours', 'template_theme'),
+        'title' => __('Open hours', 'template-theme'),
         'priority' => 31,
-        'description' => __('Adjust your opening hours in header', 'template_theme'),
+        'description' => __('Adjust your opening hours in header', 'template-theme'),
     ));
 
     $wp_customize->add_section('address', array(
-        'title' => __('Address of company', 'template_theme'),
+        'title' => __('Address of company', 'template-theme'),
         'priority' => 32,
-        'description' => __('Here u can write address of your company', 'template_theme'),
+        'description' => __('Here u can write address of your company', 'template-theme'),
     ));
 
     $wp_customize->add_section('copyright', array(
-        'title' =>  __('Copyright', 'template_theme'),
+        'title' =>  __('Copyright', 'template-theme'),
         'priority' => 33,
-        'description' =>  __('Adjust text in your copyright section in footer', 'template_theme'),
+        'description' =>  __('Adjust text in your copyright section in footer', 'template-theme'),
     ));
 
 
@@ -58,7 +58,7 @@ function templete_theme_customize_register($wp_customize)
     ));
 
     $wp_customize->add_setting('open_hours_1', array(
-        'default' => __('Wednesday - Sunday: 12:00 - 20:00', 'template_theme'),
+        'default' => __('Wednesday - Sunday: 12:00 - 20:00', 'template-theme'),
         'transport' => 'refresh',
         'sanitize_callback' => 'sanitize_text_field',
     ));
@@ -70,13 +70,13 @@ function templete_theme_customize_register($wp_customize)
     ));
 
     $wp_customize->add_setting('address_street', array(
-        'default' => __('Street and street number', 'template_theme'),
+        'default' => __('Street and house number', 'template-theme'),
         'transport' => 'refresh',
         'sanitize_callback' => 'sanitize_text_field',
     ));
 
     $wp_customize->add_setting('address_city', array(
-        'default' => __('City and postal code', 'template_theme'),
+        'default' => __('City and postal code', 'template-theme'),
         'transport' => 'refresh',
         'sanitize_callback' => 'sanitize_text_field',
     ));
@@ -99,63 +99,63 @@ function templete_theme_customize_register($wp_customize)
         'type' => 'tel',
         'priority' => 10,
         'section' => 'contact_informations',
-        'label' => __('Telephone number', 'template_theme'),
-        'description' => __('Insert telephone number to your company', 'template_theme'),
+        'label' => __('Telephone number', 'template-theme'),
+        'description' => __('Insert telephone number to your company', 'template-theme'),
     ));
 
     $wp_customize->add_control('contact_mail', array(
         'type' => 'mail',
         'priority' => 11,
         'section' => 'contact_informations',
-        'label' => __('Mail address', 'template_theme'),
-        'description' => __('Insert mail address of your company', 'template_theme'),
+        'label' => __('Mail address', 'template-theme'),
+        'description' => __('Insert mail address of your company', 'template-theme'),
     ));
 
     $wp_customize->add_control('open_hours_1', array(
         'type' => 'text',
         'priority' => 10,
         'section' => 'open_hours',
-        'label' => __('Open hours - first line', 'template_theme'),
-        'description' => __('Place reserved for your open hours', 'template_theme'),
+        'label' => __('Open hours - first line', 'template-theme'),
+        'description' => __('Place reserved for your open hours', 'template-theme'),
     ));
 
     $wp_customize->add_control('open_hours_2', array(
         'type' => 'text',
         'priority' => 11,
         'section' => 'open_hours',
-        'label' => __('Open hours - second line', 'template_theme'),
-        'description' => __('Place reserved for your open hours, leave blank if you do not want this line to show', 'template_theme'),
+        'label' => __('Open hours - second line', 'template-theme'),
+        'description' => __('Place reserved for your open hours, leave blank if you do not want this line to show', 'template-theme'),
     ));
 
     $wp_customize->add_control('address_street', array(
         'type' => 'text',
         'priority' => 10,
         'section' => 'address',
-        'label' => __('Street', 'template_theme'),
-        'description' => __('Inset name of the street and number of building', 'template_theme'),
+        'label' => __('Street', 'template-theme'),
+        'description' => __('Inset name of the street and number of building', 'template-theme'),
     ));
 
     $wp_customize->add_control('address_city', array(
         'type' => 'text',
         'priority' => 11,
         'section' => 'address',
-        'label' => __('City', 'template_theme'),
-        'description' => __('Insert name of the city and postal code', 'template_theme'),
+        'label' => __('City', 'template-theme'),
+        'description' => __('Insert name of the city and postal code', 'template-theme'),
     ));
 
     $wp_customize->add_control('copy_by', array(
         'type' => 'text',
         'priority' => 10,
         'section' => 'copyright',
-        'label' => __('Copyright', 'template_theme'),
-        'description' => __('Place reserved for copyright symbol and year', 'template_theme'),
+        'label' => __('Copyright', 'template-theme'),
+        'description' => __('Place reserved for copyright symbol and year', 'template-theme'),
     ));
 
     $wp_customize->add_control('copy_text', array(
         'type' => 'textarea',
         'priority' => 20,
         'section' => 'copyright',
-        'label' => __('Additional text', 'template_theme'),
-        'description' => __('Place reserved for some additional text', 'template_theme'),
+        'label' => __('Additional text', 'template-theme'),
+        'description' => __('Place reserved for some additional text', 'template-theme'),
     ));
 }

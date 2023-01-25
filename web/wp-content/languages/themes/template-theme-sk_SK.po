@@ -1,0 +1,173 @@
+# Blank WordPress Pot
+# Copyright 2014 ...
+# This file is distributed under the GNU General Public License v3 or later.
+msgid ""
+msgstr ""
+"Project-Id-Version: Blank WordPress Pot v1.0.0\n"
+"Report-Msgid-Bugs-To: Translator Name <translations@example.com>\n"
+"POT-Creation-Date: 2023-01-25 13:31+0100\n"
+"PO-Revision-Date: \n"
+"Last-Translator: \n"
+"Language-Team: Your Team <translations@example.com>\n"
+"Language: sk_SK\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=3; plural=(n==1 ? 0 : n>=2 && n<=4 ? 1 : 2);\n"
+"X-Textdomain-Support: yesX-Generator: Poedit 1.6.4\n"
+"X-Poedit-SourceCharset: UTF-8\n"
+"X-Poedit-KeywordsList: __;_e;esc_html_e;esc_html_x:1,2c;esc_html__;"
+"esc_attr_e;esc_attr_x:1,2c;esc_attr__;_ex:1,2c;_nx:4c,1,2;_nx_noop:4c,1,2;"
+"_x:1,2c;_n:1,2;_n_noop:1,2;__ngettext:1,2;__ngettext_noop:1,2;_c,_nc:4c,1,2\n"
+"X-Poedit-Basepath: ../../themes/template\n"
+"X-Generator: Poedit 3.2.2\n"
+"X-Poedit-SearchPath-0: .\n"
+
+#: 404.php:10
+msgid "Shieeeet! Something is not right."
+msgstr "Saaaakra! Niečo sa nám pokazilo."
+
+#: header.php:22
+msgid "Skip to content"
+msgstr "Preskočiť na obsah"
+
+#: home.php:46 single.php:37
+msgid "We are sorry but this page has no post added right now."
+msgstr ""
+"Je nám ľúto, ale na tejto stránke nie je práve pridaný žiadny príspevok."
+
+#: inc/customizer_expansions.php:22
+msgid "Contact informations"
+msgstr "Kontaktné informácie"
+
+#: inc/customizer_expansions.php:24 inc/customizer_expansions.php:30
+msgid "Adjust your opening hours in header"
+msgstr "Nastav otváracie hodiny v hlavičke"
+
+#: inc/customizer_expansions.php:28
+msgid "Open hours"
+msgstr "Otváracie hodiny"
+
+#: inc/customizer_expansions.php:34
+msgid "Address of company"
+msgstr "Adresa spoločnosti"
+
+#: inc/customizer_expansions.php:36
+msgid "Here u can write address of your company"
+msgstr "Sem môžeš vpísať adresu svojej spoločnosti"
+
+#: inc/customizer_expansions.php:40 inc/customizer_expansions.php:150
+msgid "Copyright"
+msgstr "Copyright"
+
+#: inc/customizer_expansions.php:42
+msgid "Adjust text in your copyright section in footer"
+msgstr "Uprav text copyright sekcie v pätičke"
+
+#: inc/customizer_expansions.php:61
+msgid "Wednesday - Sunday: 12:00 - 20:00"
+msgstr "Streda - Nedeľa: 12:00 - 20:00"
+
+#: inc/customizer_expansions.php:73
+msgid "Street and house number"
+msgstr "Ulica a číslo domu"
+
+#: inc/customizer_expansions.php:79
+msgid "City and postal code"
+msgstr "Mesto a smerovacie číslo"
+
+#: inc/customizer_expansions.php:102
+msgid "Telephone number"
+msgstr "Telefónne číslo"
+
+#: inc/customizer_expansions.php:103
+msgid "Insert telephone number to your company"
+msgstr "Vlož telefónne číslo svojej spoločnosti"
+
+#: inc/customizer_expansions.php:110
+msgid "Mail address"
+msgstr "Mailová adresa"
+
+#: inc/customizer_expansions.php:111
+msgid "Insert mail address of your company"
+msgstr "Vlož mailovú adresu svojej spoločnosti"
+
+#: inc/customizer_expansions.php:118
+msgid "Open hours - first line"
+msgstr "Otváracie hodiny - prvý riadok"
+
+#: inc/customizer_expansions.php:119
+msgid "Place reserved for your open hours"
+msgstr "Miesto vyhradené pre otváracie hodiny"
+
+#: inc/customizer_expansions.php:126
+msgid "Open hours - second line"
+msgstr "Otváracie hodiny - druhý riadok"
+
+#: inc/customizer_expansions.php:127
+msgid ""
+"Place reserved for your open hours, leave blank if you do not want this line "
+"to show"
+msgstr ""
+"Miesto vyhradené pre otváracie hodiny, nechaj prázdne ak nechceš aby sa "
+"tento riadok zobrazoval"
+
+#: inc/customizer_expansions.php:134
+msgid "Street"
+msgstr "Ulica"
+
+#: inc/customizer_expansions.php:135
+msgid "Inset name of the street and number of building"
+msgstr "Vlož názov ulice a číslo budovy"
+
+#: inc/customizer_expansions.php:142
+msgid "City"
+msgstr "Mesto"
+
+#: inc/customizer_expansions.php:143
+msgid "Insert name of the city and postal code"
+msgstr "Vlož názov mesta a smerovacie číslo"
+
+#: inc/customizer_expansions.php:151
+msgid "Place reserved for copyright symbol and year"
+msgstr "Miesto vyhradené pre copyright symbol a rok"
+
+#: inc/customizer_expansions.php:158
+msgid "Additional text"
+msgstr "Sprievodný text"
+
+#: inc/customizer_expansions.php:159
+msgid "Place reserved for some additional text"
+msgstr "Miesto vyhradené pre sprievodný text"
+
+#: inc/site-settings.php:65
+msgid "Main menu"
+msgstr "Hlavné menu"
+
+#: inc/site-settings.php:66
+msgid "Secondary menu"
+msgstr "Vedľajšie menu"
+
+#: inc/widgets.php:16
+msgid "Header"
+msgstr "Hlavička"
+
+#: inc/widgets.php:18
+msgid "Here u can insert content which will show up in your header"
+msgstr "Sem vlož obsah ktorý sa objaví v hlavičke stránky"
+
+#: inc/widgets.php:26
+msgid "Side content"
+msgstr "Vedľajší obsah"
+
+#: inc/widgets.php:28
+msgid "Here u can insert content which will show up on side of your page"
+msgstr "Sem môžeš vložiť obsah ktorý sa objaví na boku hlavného obsahu stránky"
+
+#: inc/widgets.php:38
+msgid "Footer"
+msgstr "Pätička"
+
+#: inc/widgets.php:40
+msgid "Here u can insert content which will show up in your footer"
+msgstr "Sem vlož obsah ktorý sa objaví v pätičke"

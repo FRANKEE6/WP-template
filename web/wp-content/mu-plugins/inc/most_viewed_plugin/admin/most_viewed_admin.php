@@ -12,7 +12,7 @@ function template_theme_add_post_views_column($columns)
     // U can also use unset to delete some columns
     unset($columns['author']);
 
-    $columns['views'] = __('Views', 'template_theme');
+    $columns['views'] = __('Views', 'template-theme-MU-plugin');
 
     return $columns;
 }
@@ -65,7 +65,7 @@ function template_theme_add_post_views_data($column, $post_ID)
 add_filter('manage_edit-post_sortable_columns', 'teamplate_theme_add_sortable_views_column');
 function teamplate_theme_add_sortable_views_column($columns)
 {
-    $columns['views'] = __('views', 'template_theme');
+    $columns['views'] = __('views', 'template-theme-MU-plugin');
 
     return ($columns);
 }

@@ -16,7 +16,7 @@ function template_theme_setup()
      * 
      */
 
-    load_theme_textdomain('template_theme', TEMPLATE_DIRECTORY . '/languages');
+    load_theme_textdomain('template-theme', TEMPLATE_DIRECTORY . '/languages');
 
 
     /**

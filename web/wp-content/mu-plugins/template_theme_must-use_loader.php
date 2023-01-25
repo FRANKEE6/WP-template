@@ -1,9 +1,10 @@
 <?php
 /*
-Plugin Name:    Template Theme
+Plugin Name:    Template Theme MU plguin
 Description:    This is a must use plugin
 Version:        0.01
 Author:         FRANKEE
+Text Domain:    template-theme-MU-plugin
 */
 
 /*
