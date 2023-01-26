@@ -6,7 +6,12 @@
  *  https://developer.wordpress.org/reference/hooks/manage_posts_columns/
  */
 
-add_filter('manage_posts_columns', 'template_theme_add_post_views_column');
+// We can also use for cycle to fire our function for more different hooks. This is used for our custom post types
+foreach (array('post', 'tt_movies', 'tt_directors') as $screen) {
+    $screen = ($screen == 'post') ? '' : $screen . '_';
+
+    add_filter("manage_{$screen}posts_columns", 'template_theme_add_post_views_column');
+}
 function template_theme_add_post_views_column($columns)
 {
     // U can also use unset to delete some columns
@@ -61,8 +66,9 @@ function template_theme_add_post_views_data($column, $post_ID)
 /**
  *  Make 'views' column sortable
  */
-
-add_filter('manage_edit-post_sortable_columns', 'teamplate_theme_add_sortable_views_column');
+foreach (array('post', 'tt_movies', 'tt_directors') as $screen) {
+    add_filter("manage_edit-{$screen}_sortable_columns", 'teamplate_theme_add_sortable_views_column');
+}
 function teamplate_theme_add_sortable_views_column($columns)
 {
     $columns['views'] = __('views', 'template-theme-MU-plugin');

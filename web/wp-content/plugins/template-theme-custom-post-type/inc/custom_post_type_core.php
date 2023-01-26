@@ -55,6 +55,8 @@ function template_theme_custom_post_type()
         'menu_icon'          => 'dashicons-editor-video',
         'taxonomies'         => array('post_tag'),
         'supports'           => array('title', 'editor', 'author', 'thumbnail', 'excerpt'),
+        // Callback for our custom meta box
+        'register_meta_box_cb' => 'template_theme_movie_meta_boxes',
     );
 
     register_post_type('tt_movies', $args);
@@ -65,12 +67,129 @@ function template_theme_custom_post_type()
  *  Adjust main query to do not retrieve posts but our custom post type
  * 
  *  Code is just example which can be used if just want to list our custom type on blog page
- *  In our scenario, we had to create new loop on our page
+ *  In our scenario, we had to create new loop on ordinary page
  */
 /* add_action('pre_get_posts', 'template_theme_custom_post_type_modify_main_query');
-function template_theme_custom_post_type_modify_main_query()
+function template_theme_custom_post_type_modify_main_query($query)
 {
-    if ( $query->is_home() && $query->is_main_query() ) {
-        $query->set( 'post_type', 'tt_movies' );
+    if ($query->is_page('films') && $query->is_main_query()) {
+        $query->set('post_type', 'tt_movies');
     }
 } */
+
+
+/**
+ *  Movie meta box
+ * 
+ *  Function is called by when registering our post type above
+ */
+function template_theme_movie_meta_boxes()
+{
+    add_meta_box(
+        'template-theme-movies-meta',
+        __('More about this movie', 'template-theme-custom-post-type'),
+        'template_theme_add_meta_box_callback',
+
+    );
+}
+
+
+/**
+ *  Adds metabox files and nonce field 
+ */
+function template_theme_add_meta_box_callback($post)
+{
+    wp_nonce_field(
+        'template_theme_movie_meta_data',
+        'template_theme_movie_meta_data_nonce'
+    );
+
+    $year = esc_attr(get_post_meta($post->ID, 'tt_movie_year', true));
+    $gross = esc_attr(get_post_meta($post->ID, 'tt_movie_gross', true))
+?>
+
+    <table class="form-table">
+        <tbody>
+            <tr>
+                <th scope="row">
+                    <label for="tt-year"><?= _x('Year of release', 'Year of film premiere', 'template-theme-custom-post-type') ?></label>
+                </th>
+                <td>
+                    <input type="number" ID="tt-year" name="tt-year" value="<?= $year ?>">
+                </td>
+            </tr>
+            <tr>
+                <th scope="row">
+                    <label for="tt-gross"><?= _x('Worldwide gross', 'Wordwide gross of film', 'template-theme-custom-post-type') ?></label>
+                </th>
+                <td>
+                    <input type="number" ID="tt-gross" name="tt-gross" value="<?= $gross ?>">
+                    <?php if ($gross) : ?>
+                        <span class="wp-ui-text-icon">
+                            <?= number_format_i18n($gross) . ' $' ?>
+                        </span>
+                    <?php endif; ?>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+
+<?php
+}
+
+
+/**
+ *  At save, chceck nonce field and save data
+ */
+add_action('save_post', 'template_theme_movies_save_post');
+function template_theme_movies_save_post($post_ID)
+{
+    if (!isset($_POST['template_theme_movie_meta_data_nonce']))
+        return $post_ID;
+
+    $nonce = $_POST['template_theme_movie_meta_data_nonce'];
+
+    if (!wp_verify_nonce($nonce, 'template_theme_movie_meta_data'))
+        return $post_ID;
+
+    if (defined('DOING_AUTOSAVE') && DOING_AUTOSAVE)
+        return $post_ID;
+
+    $year = sanitize_text_field($_POST['tt-year']);
+    $gross = sanitize_text_field($_POST['tt-gross']);
+
+    update_post_meta($post_ID, 'tt_movie_year', $year);
+    update_post_meta($post_ID, 'tt_movie_gross', $gross);
+}
+
+
+/**
+ *  Get SUM of gross values
+ * 
+ *  We will extrac ID's of posts from our custom query (if u do not use custom query, use global $wp_query)
+ */
+function template_theme_total_gross()
+{
+    global $films_custom_query;
+
+    if (!count($films_custom_query->posts)) return 0;
+
+    $ids = [];
+    foreach ($films_custom_query->posts as $post) {
+        array_push($ids, $post->ID);
+    }
+    $ids = esc_sql($ids);
+    $ids = implode(',', $ids);
+
+    global $wpdb;
+
+    $sum = $wpdb->get_var($wpdb->prepare("
+        SELECT SUM(meta_value)
+        FROM wp_postmeta
+        WHERE post_id IN ($ids) AND meta_key = %s
+        ", array(
+        'tt_movie_gross',
+    )));
+
+    return intval($sum);
+}

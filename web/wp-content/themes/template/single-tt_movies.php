@@ -14,8 +14,31 @@ get_header();
         <?php if (have_posts()) : ?>
             <?php while (have_posts()) : the_post(); ?>
                 <!-- Set structure of each post here -->
-                <h1><?php the_title() ?></h1>
-                <?php the_content() ?>
+                <h2><?php the_title() ?></h2>
+
+                <table>
+                    <thead>
+                        <tr>
+                            <th><?php echo _x('Title', 'Title of movie in table', 'template-theme') ?></th>
+                            <th><?php echo _x('Year', 'Release year of movie in table', 'template-theme') ?></th>
+                            <th><?php echo _x('Gross', 'Worldwide gross of movie in table', 'template-theme') ?></th>
+                        </tr>
+                    </thead>
+
+                    <tbody>
+                        <tr>
+                            <td><?php the_title() ?></td>
+                            <td><?php echo post_custom('tt_movie_year') ?></td>
+                            <td><?php echo number_format_i18n(post_custom('tt_movie_gross')) ?></td>
+                        </tr>
+                    </tbody>
+
+                    <tfoot>
+                        <tr class="summary">
+                            <td colspan="3"><?php the_content() ?></td>
+                        </tr>
+                    </tfoot>
+                </table>
 
             <?php endwhile; ?>
 

@@ -12,7 +12,7 @@
  */
 class Template_Theme_SEO_Meta_Plugin
 {
-    private $config = '{"title":"SEO meta","description":"Creates meta description for seo and some other stuff","prefix":"seo_meta_","domain":"template-theme-MU-plugin","class_name":"Template_Theme_SEO_Meta_Plugin","post-type":["post","page"],"context":"normal","priority":"default","fields":[{"type":"textarea","label":"meta description","default":"Text u want to be shown by search engines","rows":"3","id":"seo_meta_meta-description"},{"type":"text","label":"Facebook title","id":"seo_meta_facebook-title"},{"type":"textarea","label":"Facebook description","id":"seo_meta_facebook-description"},{"type":"media","label":"Facebook image","return":"url","id":"seo_meta_facebook-image"}]}';
+    private $config = '{"title":"SEO meta","description":"Creates meta description for seo and some other stuff","prefix":"seo_meta_","domain":"template-theme-MU-plugin","class_name":"Template_Theme_SEO_Meta_Plugin","post-type":["post","page","tt_movies","tt_directors"],"context":"normal","priority":"default","fields":[{"type":"textarea","label":"meta description","default":"Text u want to be shown by search engines","rows":"3","id":"seo_meta_meta-description"},{"type":"text","label":"Facebook title","id":"seo_meta_facebook-title"},{"type":"textarea","label":"Facebook description","id":"seo_meta_facebook-description"},{"type":"media","label":"Facebook image","return":"url","id":"seo_meta_facebook-image"}]}';
 
     public function __construct()
     {
