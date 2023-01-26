@@ -41,3 +41,5 @@ esc_html__('text', 'textdomain'),
 esc_html_e('text', 'textdomain'),
 esc_attr_x('text', 'Post type singular name', 'textdomain'),
 ```
+
+- To localize script chceck [this link](https://developer.wordpress.org/reference/functions/wp_localize_script/)

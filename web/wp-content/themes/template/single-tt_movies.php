@@ -22,6 +22,7 @@ get_header();
                             <th><?php echo _x('Title', 'Title of movie in table', 'template-theme') ?></th>
                             <th><?php echo _x('Year', 'Release year of movie in table', 'template-theme') ?></th>
                             <th><?php echo _x('Gross', 'Worldwide gross of movie in table', 'template-theme') ?></th>
+                            <th><?php echo _x('Genre', 'Movie genre in table', 'template-theme') ?></th>
                         </tr>
                     </thead>
 
@@ -30,12 +31,13 @@ get_header();
                             <td><?php the_title() ?></td>
                             <td><?php echo post_custom('tt_movie_year') ?></td>
                             <td><?php echo number_format_i18n(post_custom('tt_movie_gross')) ?></td>
+                            <td><?php the_terms(get_the_ID(), 'genre', '', ' ') ?></td>
                         </tr>
                     </tbody>
 
                     <tfoot>
                         <tr class="summary">
-                            <td colspan="3"><?php the_content() ?></td>
+                            <td colspan="4"><?php the_content() ?></td>
                         </tr>
                     </tfoot>
                 </table>

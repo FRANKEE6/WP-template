@@ -24,6 +24,18 @@ function template_theme_custom_post_type_load_textdomain()
 
 
 /**
+ *  Load register functions for your custom post types
+ */
+require_once TEMPLATE_THEME_CUSTOM_POST_TYPE_PLUGIN_DIR . '/inc/custom_post_type_register.php';
+
+
+/**
  *  Load core functionality of plugin
  */
-require_once TEMPLATE_THEME_CUSTOM_POST_TYPE_PLUGIN_DIR . '/inc/custom_post_type_core.php';
+require_once TEMPLATE_THEME_CUSTOM_POST_TYPE_PLUGIN_DIR . '/inc/custom_post_type_functions.php';
+
+
+/**
+ *  Load meta data and taxonomies
+ */
+require_once TEMPLATE_THEME_CUSTOM_POST_TYPE_PLUGIN_DIR . '/inc/custom_post_type_metas.php';
