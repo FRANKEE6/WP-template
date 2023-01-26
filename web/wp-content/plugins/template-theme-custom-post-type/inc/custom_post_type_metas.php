@@ -37,15 +37,15 @@ function template_theme_add_meta_box_callback_movies($post)
                     <label for="tt-year"><?= _x('Year of release', 'Year of film premiere', 'template-theme-custom-post-type') ?></label>
                 </th>
                 <td>
-                    <input type="number" ID="tt-year" name="tt-year" value="<?= $year ?>">
+                    <input type="number" ID="tt-year" name="tt-year" value="<?= esc_attr($year) ?>">
                 </td>
             </tr>
             <tr>
                 <th scope="row">
-                    <label for="tt-gross"><?= _x('Worldwide gross', 'Wordwide gross of film', 'template-theme-custom-post-type') ?></label>
+                    <label for="tt-gross"><?= _x('Worldwide gross', 'Worldwide gross of film', 'template-theme-custom-post-type') ?></label>
                 </th>
                 <td>
-                    <input type="number" ID="tt-gross" name="tt-gross" value="<?= $gross ?>">
+                    <input type="number" ID="tt-gross" name="tt-gross" value="<?= esc_attr($gross) ?>">
                     <?php if ($gross) : ?>
                         <span class="wp-ui-text-icon">
                             <?= number_format_i18n($gross) . ' $' ?>
@@ -84,6 +84,9 @@ function template_theme_movies_save_post($post_ID)
     update_post_meta($post_ID, 'tt_movie_gross', $gross);
 }
 
+
+
+//_____________________________________________________________________________________________________________________
 /**
  *  director meta box
  * 
@@ -110,31 +113,26 @@ function template_theme_add_meta_box_callback_directors($post)
         'template_theme_director_meta_data_nonce'
     );
 
-    $year = esc_attr(get_post_meta($post->ID, 'tt_director_year', true));
-    $gross = esc_attr(get_post_meta($post->ID, 'tt_director_gross', true))
+    $date = esc_attr(get_post_meta($post->ID, 'tt_director_date', true));
+    $country = esc_attr(get_post_meta($post->ID, 'tt_director_country', true))
 ?>
 
     <table class="form-table">
         <tbody>
             <tr>
                 <th scope="row">
-                    <label for="tt-year"><?= _x('Year of release', 'Year of film premiere', 'template-theme-custom-post-type') ?></label>
+                    <label for="tt-date"><?= _x('Birthdate', 'date of director birth', 'template-theme-custom-post-type') ?></label>
                 </th>
                 <td>
-                    <input type="number" ID="tt-year" name="tt-year" value="<?= $year ?>">
+                    <input type="date" ID="tt-date" name="tt-date" value="<?= esc_attr($date) ?>">
                 </td>
             </tr>
             <tr>
                 <th scope="row">
-                    <label for="tt-gross"><?= _x('Worldwide gross', 'Wordwide gross of film', 'template-theme-custom-post-type') ?></label>
+                    <label for="tt-country"><?= _x('Country', 'Country of director', 'template-theme-custom-post-type') ?></label>
                 </th>
                 <td>
-                    <input type="number" ID="tt-gross" name="tt-gross" value="<?= $gross ?>">
-                    <?php if ($gross) : ?>
-                        <span class="wp-ui-text-icon">
-                            <?= number_format_i18n($gross) . ' $' ?>
-                        </span>
-                    <?php endif; ?>
+                    <input type="text" class="regular-text" ID="tt-country" name="tt-country" value="<?= esc_attr($country) ?>">
                 </td>
             </tr>
         </tbody>
@@ -161,11 +159,11 @@ function template_theme_directors_save_post($post_ID)
     if (defined('DOING_AUTOSAVE') && DOING_AUTOSAVE)
         return $post_ID;
 
-    $year = sanitize_text_field($_POST['tt-year']);
-    $gross = sanitize_text_field($_POST['tt-gross']);
+    $date = sanitize_text_field($_POST['tt-date']);
+    $country = sanitize_text_field($_POST['tt-country']);
 
-    update_post_meta($post_ID, 'tt_director_year', $year);
-    update_post_meta($post_ID, 'tt_director_gross', $gross);
+    update_post_meta($post_ID, 'tt_director_date', $date);
+    update_post_meta($post_ID, 'tt_director_country', $country);
 }
 
 
