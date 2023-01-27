@@ -39,6 +39,7 @@ get_header();
                     <th><?php echo _x('Year', 'Release year of movie in table', 'template-theme') ?></th>
                     <th><?php echo _x('Gross', 'Worldwide gross of movie in table', 'template-theme') ?></th>
                     <th><?php echo _x('Genre', 'Movie genre in table', 'template-theme') ?></th>
+                    <th><?php echo _x('Director', 'Director of a movie in table', 'template-theme') ?></th>
                     <?php if (is_user_logged_in()) : ?>
                         <th><?php echo _x('Edit', 'Edit movie link in table', 'template-theme') ?></th>
                     <?php endif; ?>
@@ -65,6 +66,11 @@ get_header();
                             ?>
                             <!-- use this to list your custom taxonomy -->
                             <?php the_terms(get_the_ID(), 'genre', '', ' ') ?>
+                        </td>
+                        <td>
+                            <!-- use this to list your custom taxonomy relationship -->
+                            <?php echo post_custom('tt_movie_director')
+                            ?>
                         </td>
                         <?php if (is_user_logged_in()) : ?>
                             <td>

@@ -11,7 +11,6 @@ function template_theme_movie_meta_boxes()
         'template-theme-movies-meta',
         __('More about this movie', 'template-theme-custom-post-type'),
         'template_theme_add_meta_box_callback_movies',
-
     );
 }
 
@@ -26,8 +25,15 @@ function template_theme_add_meta_box_callback_movies($post)
         'template_theme_movie_meta_data_nonce'
     );
 
+    $selected_director = esc_attr(get_post_meta($post->ID, 'tt_movie_director', true));
     $year = esc_attr(get_post_meta($post->ID, 'tt_movie_year', true));
-    $gross = esc_attr(get_post_meta($post->ID, 'tt_movie_gross', true))
+    $gross = esc_attr(get_post_meta($post->ID, 'tt_movie_gross', true));
+    $directors = get_posts(array(
+        'post_type'     => 'tt_directors',
+        'numberposts'   => -1,
+        'order_by'      => 'post_title',
+        'order'         => 'ASC',
+    ));
 ?>
 
     <table class="form-table">
@@ -51,6 +57,19 @@ function template_theme_add_meta_box_callback_movies($post)
                             <?= number_format_i18n($gross) . ' $' ?>
                         </span>
                     <?php endif; ?>
+                </td>
+            </tr>
+            <tr>
+                <th scope="row">
+                    <label for="tt-director"><?= _x('Director', 'Director of this film', 'template-theme-custom-post-type') ?></label>
+                </th>
+                <td>
+                    <select name="tt-director">
+                        <option><?php _e('Select director from list', 'template-theme-cusom-post-type') ?></option>
+                        <?php foreach ($directors as $director) : ?>
+                            <option value="<?php echo $director->post_title; ?>" <?php if ($selected_director == $director->post_title) echo ' selected="selected"'; ?>><?php echo $director->post_title; ?></option>
+                        <?php endforeach; ?>
+                    </select>
                 </td>
             </tr>
         </tbody>
@@ -79,9 +98,11 @@ function template_theme_movies_save_post($post_ID)
 
     $year = sanitize_text_field($_POST['tt-year']);
     $gross = sanitize_text_field($_POST['tt-gross']);
+    $selected_director = sanitize_text_field($_POST['tt-director']);
 
     update_post_meta($post_ID, 'tt_movie_year', $year);
     update_post_meta($post_ID, 'tt_movie_gross', $gross);
+    update_post_meta($post_ID, 'tt_movie_director', $selected_director);
 }
 
 

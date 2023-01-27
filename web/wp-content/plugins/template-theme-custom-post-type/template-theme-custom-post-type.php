@@ -45,3 +45,9 @@ require_once TEMPLATE_THEME_CUSTOM_POST_TYPE_PLUGIN_DIR . '/inc/custom_post_type
  *  Load custom images for taxonomies
  */
 require_once TEMPLATE_THEME_CUSTOM_POST_TYPE_PLUGIN_DIR . '/inc/custom_post_type_taxonomy_images.php';
+
+
+/**
+ *  Load custom images for taxonomies
+ */
+require_once TEMPLATE_THEME_CUSTOM_POST_TYPE_PLUGIN_DIR . '/inc/custom_post_type_relationships.php';
