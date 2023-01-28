@@ -67,7 +67,7 @@ function template_theme_add_meta_box_callback_movies($post)
                     <select name="tt-director">
                         <option><?php _e('Select director from list', 'template-theme-cusom-post-type') ?></option>
                         <?php foreach ($directors as $director) : ?>
-                            <option value="<?php echo $director->post_title; ?>" <?php if ($selected_director == $director->post_title) echo ' selected="selected"'; ?>><?php echo $director->post_title; ?></option>
+                            <option value="<?php echo $director->ID; ?>" <?php if ($selected_director == $director->ID) echo ' selected="selected"'; ?>><?php echo $director->post_title; ?></option>
                         <?php endforeach; ?>
                     </select>
                 </td>

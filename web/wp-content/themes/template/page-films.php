@@ -18,16 +18,16 @@ get_header();
     // Makes sure pagination works with custom query
     $paged = (get_query_var('paged')) ? get_query_var('paged') : 1;
 
-    $args = array(
+
+
+    $films_custom_query = new WP_Query($args = array(
         'posts_per_page'    => get_option('posts_per_page'),
         'post_type'         => 'tt_movies',
         'post_status'       => 'publish',
         'orderby'           => 'post_title',
         'order'             => 'ASC',
         'paged'             => $paged,
-    );
-
-    $films_custom_query = new WP_Query($args);
+    ));
     ?>
 
     <!-- WordPress loops starts -->
@@ -49,7 +49,6 @@ get_header();
             <tbody>
                 <!-- Set structure of each post here -->
                 <?php while ($films_custom_query->have_posts()) : $films_custom_query->the_post(); ?>
-
                     <tr>
                         <td>
                             <a href="<?php the_permalink() ?>"><?php the_title() ?></a>
@@ -69,8 +68,9 @@ get_header();
                         </td>
                         <td>
                             <!-- use this to list your custom taxonomy relationship -->
-                            <?php echo post_custom('tt_movie_director')
-                            ?>
+                            <a href="<?php echo esc_url(get_post_permalink(post_custom('tt_movie_director'))) ?>">
+                                <?php echo get_the_title(post_custom('tt_movie_director')) ?>
+                            </a>
                         </td>
                         <?php if (is_user_logged_in()) : ?>
                             <td>
