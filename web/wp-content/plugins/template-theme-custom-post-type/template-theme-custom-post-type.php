@@ -48,6 +48,6 @@ require_once TEMPLATE_THEME_CUSTOM_POST_TYPE_PLUGIN_DIR . '/inc/custom_post_type
 
 
 /**
- *  Load custom images for taxonomies
+ *  Load custom menu relationships submenu page example
  */
 require_once TEMPLATE_THEME_CUSTOM_POST_TYPE_PLUGIN_DIR . '/inc/custom_post_type_relationships.php';

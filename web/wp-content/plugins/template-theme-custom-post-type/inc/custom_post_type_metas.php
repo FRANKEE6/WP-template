@@ -1,9 +1,9 @@
 <?php
 
 /**
- *  Movie meta box
+ *  Movie meta box is added
  * 
- *  Function is called by when registering our post type above
+ *  Function is called by callback when registering movie post type
  */
 function template_theme_movie_meta_boxes()
 {
@@ -16,26 +16,35 @@ function template_theme_movie_meta_boxes()
 
 
 /**
- *  Adds metabox files and nonce field 
+ *  Adds movie metabox files and nonce field 
+ * 
+ *  https://developer.wordpress.org/reference/functions/wp_nonce_field/
  */
 function template_theme_add_meta_box_callback_movies($post)
 {
+    // Add nonce field to increase security of form
     wp_nonce_field(
         'template_theme_movie_meta_data',
         'template_theme_movie_meta_data_nonce'
     );
 
+    // We will retrieve parameters which are set in database into variables
+    // For highter safety we should escape attributes
     $selected_director = esc_attr(get_post_meta($post->ID, 'tt_movie_director', true));
     $year = esc_attr(get_post_meta($post->ID, 'tt_movie_year', true));
     $gross = esc_attr(get_post_meta($post->ID, 'tt_movie_gross', true));
+
+    // We need to get all directors from database so we can show them in drop-down select menu
+    // Also we are able to set their ordering
     $directors = get_posts(array(
         'post_type'     => 'tt_directors',
         'numberposts'   => -1,
         'order_by'      => 'post_title',
         'order'         => 'ASC',
     ));
-?>
 
+    // HTML structure of your form
+?>
     <table class="form-table">
         <tbody>
             <tr>
@@ -53,6 +62,7 @@ function template_theme_add_meta_box_callback_movies($post)
                 <td>
                     <input type="number" ID="tt-gross" name="tt-gross" value="<?= esc_attr($gross) ?>">
                     <?php if ($gross) : ?>
+                        <!-- If we recieved any gross vlaue from database, we will output it nicely formated -->
                         <span class="wp-ui-text-icon">
                             <?= number_format_i18n($gross) . ' $' ?>
                         </span>
@@ -67,6 +77,8 @@ function template_theme_add_meta_box_callback_movies($post)
                     <select name="tt-director">
                         <option><?php _e('Select director from list', 'template-theme-cusom-post-type') ?></option>
                         <?php foreach ($directors as $director) : ?>
+                            <!-- Here we will output each director we retrieved from database one by one as option. -->
+                            <!-- Value is directors id and if film already has some director selected, that option will be marked as selected. -->
                             <option value="<?php echo $director->ID; ?>" <?php if ($selected_director == $director->ID) echo ' selected="selected"'; ?>><?php echo $director->post_title; ?></option>
                         <?php endforeach; ?>
                     </select>
@@ -80,22 +92,27 @@ function template_theme_add_meta_box_callback_movies($post)
 
 
 /**
- *  At save, chceck nonce field and save data
+ *  At save, verify nonce field and save data
  */
 add_action('save_post', 'template_theme_movies_save_post');
 function template_theme_movies_save_post($post_ID)
 {
+    // If nonce is not recieved, stop code
     if (!isset($_POST['template_theme_movie_meta_data_nonce']))
         return $post_ID;
 
+    // if nonce was recieved, save it as variable
     $nonce = $_POST['template_theme_movie_meta_data_nonce'];
 
+    // If nonce can not be verified, stop code
     if (!wp_verify_nonce($nonce, 'template_theme_movie_meta_data'))
         return $post_ID;
 
+    // If wordpress is just autosaving, there sholud be no change in our meta fields so we do not need to continue code execution
     if (defined('DOING_AUTOSAVE') && DOING_AUTOSAVE)
         return $post_ID;
 
+    // If code gets here. Everything is ok and we can recieve, sanitize and save new data in database
     $year = sanitize_text_field($_POST['tt-year']);
     $gross = sanitize_text_field($_POST['tt-gross']);
     $selected_director = sanitize_text_field($_POST['tt-director']);
@@ -147,9 +164,9 @@ function template_theme_register_taxonomy_genre()
 
 //_____________________________________________________________________________________________________________________
 /**
- *  director meta box
+ *  Director meta box is added
  * 
- *  Function is called by when registering our post type above
+ *  Function is called by callback when registering director post type
  */
 function template_theme_director_meta_boxes()
 {
@@ -163,16 +180,23 @@ function template_theme_director_meta_boxes()
 
 
 /**
- *  Adds metabox files and nonce field 
+ *  Adds director metabox files and nonce field 
+ * 
+ *  https://developer.wordpress.org/reference/functions/wp_nonce_field/
  */
 function template_theme_add_meta_box_callback_directors($post)
 {
+    // Add nonce field to increase security of form
     wp_nonce_field(
         'template_theme_director_meta_data',
         'template_theme_director_meta_data_nonce'
     );
 
+    // We will retrieve parameters which are set in database into variables
+    // For highter safety we should escape attributes
     $date = esc_attr(get_post_meta($post->ID, 'tt_director_date', true));
+
+    // HTML structure of your form
 ?>
 
     <table class="form-table">
@@ -188,7 +212,7 @@ function template_theme_add_meta_box_callback_directors($post)
         </tbody>
     </table>
 
-    <?php
+<?php
 }
 
 
@@ -198,17 +222,22 @@ function template_theme_add_meta_box_callback_directors($post)
 add_action('save_post', 'template_theme_directors_save_post');
 function template_theme_directors_save_post($post_ID)
 {
+    // If nonce is not recieved, stop code
     if (!isset($_POST['template_theme_director_meta_data_nonce']))
         return $post_ID;
 
+    // if nonce was recieved, save it as variable
     $nonce = $_POST['template_theme_director_meta_data_nonce'];
 
+    // If nonce can not be verified, stop code
     if (!wp_verify_nonce($nonce, 'template_theme_director_meta_data'))
         return $post_ID;
 
+    // If wordpress is just autosaving, there sholud be no change in our meta fields so we do not need to continue code execution
     if (defined('DOING_AUTOSAVE') && DOING_AUTOSAVE)
         return $post_ID;
 
+    // If code gets here. Everything is ok and we can recieve, sanitize and save new data in database
     $date = sanitize_text_field($_POST['tt-date']);
 
     update_post_meta($post_ID, 'tt_director_date', $date);
@@ -250,61 +279,3 @@ function template_theme_register_taxonomy_country()
 
     register_taxonomy('country', ['tt_directors'], $args);
 }
-
-
-function template_theme_add_custom_country_filter_option($query)
-{
-    global $pagenow;
-    $type = 'tt_directors';
-    if (isset($_GET['post_type'])) {
-        $type = $_GET['post_type'];
-    }
-    if ('edit.php' == $pagenow && $type == 'tt_directors' && isset($_GET['country_filter']) && $_GET['country_filter'] != '') {
-        $query->query_vars['tax_query'] = array(
-            array(
-                'taxonomy' => 'country',
-                'field'    => 'slug',
-                'terms'    => $_GET['country_filter'],
-            ),
-        );
-    }
-}
-add_filter('parse_query', 'template_theme_add_custom_country_filter_option');
-
-
-function template_theme_add_custom_country_filter()
-{
-    $type = 'tt_directors';
-    if (isset($_GET['post_type'])) {
-        $type = $_GET['post_type'];
-    }
-    if ('tt_directors' == $type) {
-        $taxonomy = 'country';
-        $terms = get_terms(array(
-            'taxonomy' => $taxonomy,
-            'hide_empty' => false,
-        ));
-        $values = array();
-        foreach ($terms as $term) {
-            $values[$term->name] = $term->slug;
-        }
-
-    ?>
-        <select name="country_filter">
-            <option value=""><?php _e('Filter By country', 'template-theme-custom-post-type'); ?></option>
-            <?php
-            $current_v = isset($_GET['country_filter']) ? $_GET['country_filter'] : '';
-            foreach ($values as $label => $value) {
-                printf(
-                    '<option value="%s"%s>%s</option>',
-                    $value,
-                    $value == $current_v ? ' selected="selected"' : '',
-                    $label
-                );
-            }
-            ?>
-        </select>
-<?php
-    }
-}
-add_action('restrict_manage_posts', 'template_theme_add_custom_country_filter');

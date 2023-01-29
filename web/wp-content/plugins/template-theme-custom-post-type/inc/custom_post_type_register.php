@@ -53,7 +53,7 @@ function template_theme_custom_post_type_film()
         'hierarchical'       => false,
         'menu_position'      => null,
         'menu_icon'          => 'dashicons-editor-video',
-        // We will substitue post_tag with our custom taxonomy
+        // We can substitue post_tag with our custom taxonomy
         //'taxonomies'         => array('post_tag'),
         'supports'           => array('title', 'editor', 'author', 'thumbnail', 'excerpt'),
         // Callback for our custom meta box
@@ -117,8 +117,6 @@ function template_theme_custom_post_type_director()
         'hierarchical'       => false,
         'menu_position'      => null,
         'menu_icon'          => 'dashicons-businessman',
-        // We will substitue post_tag with our custom taxonomy
-        //'taxonomies'         => array('post_tag'),
         'supports'           => array('title', 'thumbnail'),
         // Callback for our custom meta box
         'register_meta_box_cb' => 'template_theme_director_meta_boxes',
