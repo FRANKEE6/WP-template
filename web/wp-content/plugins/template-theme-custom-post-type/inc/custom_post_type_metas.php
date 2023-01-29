@@ -188,7 +188,7 @@ function template_theme_add_meta_box_callback_directors($post)
         </tbody>
     </table>
 
-<?php
+    <?php
 }
 
 
@@ -250,3 +250,61 @@ function template_theme_register_taxonomy_country()
 
     register_taxonomy('country', ['tt_directors'], $args);
 }
+
+
+function template_theme_add_custom_country_filter_option($query)
+{
+    global $pagenow;
+    $type = 'tt_directors';
+    if (isset($_GET['post_type'])) {
+        $type = $_GET['post_type'];
+    }
+    if ('edit.php' == $pagenow && $type == 'tt_directors' && isset($_GET['country_filter']) && $_GET['country_filter'] != '') {
+        $query->query_vars['tax_query'] = array(
+            array(
+                'taxonomy' => 'country',
+                'field'    => 'slug',
+                'terms'    => $_GET['country_filter'],
+            ),
+        );
+    }
+}
+add_filter('parse_query', 'template_theme_add_custom_country_filter_option');
+
+
+function template_theme_add_custom_country_filter()
+{
+    $type = 'tt_directors';
+    if (isset($_GET['post_type'])) {
+        $type = $_GET['post_type'];
+    }
+    if ('tt_directors' == $type) {
+        $taxonomy = 'country';
+        $terms = get_terms(array(
+            'taxonomy' => $taxonomy,
+            'hide_empty' => false,
+        ));
+        $values = array();
+        foreach ($terms as $term) {
+            $values[$term->name] = $term->slug;
+        }
+
+    ?>
+        <select name="country_filter">
+            <option value=""><?php _e('Filter By country', 'template-theme-custom-post-type'); ?></option>
+            <?php
+            $current_v = isset($_GET['country_filter']) ? $_GET['country_filter'] : '';
+            foreach ($values as $label => $value) {
+                printf(
+                    '<option value="%s"%s>%s</option>',
+                    $value,
+                    $value == $current_v ? ' selected="selected"' : '',
+                    $label
+                );
+            }
+            ?>
+        </select>
+<?php
+    }
+}
+add_action('restrict_manage_posts', 'template_theme_add_custom_country_filter');
