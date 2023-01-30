@@ -8,14 +8,12 @@ define('TEMPLATE_THEME_MOST_VIEWED_PLUGIN_URL', untrailingslashit(plugin_dir_url
 /**
  *  Load core functionality of plugin
  */
-
 require_once TEMPLATE_THEME_MOST_VIEWED_PLUGIN_DIR . '/core/most_viewed_core.php';
 
 
 /**
  *  Load our custom widget
  */
-
 require_once TEMPLATE_THEME_MOST_VIEWED_PLUGIN_DIR . '/widget/most_viewed_widget.php';
 
 

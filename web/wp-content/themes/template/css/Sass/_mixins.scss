@@ -18,3 +18,23 @@
   align-items: $align-items;
   align-content: $align-content;
 }
+
+// Mixin for parallax layers
+@mixin parallax-layer($depth) {
+  &[data-depth="#{$depth}"] {
+    transform: translateZ($depth * var(--parallax-layer-depth));
+  }
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+}
+
+// Usage example:
+/* .parallax-layer {
+  @include parallax-layer(-0.2);
+  @include parallax-layer(-0.4);
+  @include parallax-layer(-0.6);
+  // Add more depths as needed
+} */
